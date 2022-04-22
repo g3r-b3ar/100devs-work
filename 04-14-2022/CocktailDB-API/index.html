@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="This is where your description goes" />
+		<meta name="keywords" content="one, two, three" />
+
+		<title>Title in the tab</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="search">
+			<h1>Which Cocktail?</h1>
+			<div class="search-type">
+				<input
+					type="text"
+					name=""
+					value="Cocktail Name"
+					id="cocktailNameSearch"
+				/>
+				<button type="button" name="button" id="cocktailNameButton">
+					Search By Name
+				</button>
+			</div>
+			<div class="search-type">
+				<input type="text" name="" value="Ingredient" id="ingredientSearch" />
+				<button type="button" name="button" id="cocktailIngredientButton">
+					Search By Ingredient
+				</button>
+			</div>
+		</div>
+
+		<div class="carousel">
+			<button class="carousel__button carousel__button--left is-hidden">
+				<img src="img/left-Circle.svg" alt="" srcset="" />
+			</button>
+			<div class="carousel__track-container">
+				<ul class="carousel__track">
+					<!-- <li class="carousel__slide current-slide">
+						<img
+							class="carousel__image"
+							src="https://www.thecocktaildb.com/images/media/drink/yqvvqs1475667388.jpg"
+							alt=""
+							srcset=""
+						/>
+						<h2 id="previousDrinkName"></h2>
+					</li>
+					<li class="carousel__slide">
+						<img
+							class="carousel__image"
+							src="https://www.thecocktaildb.com/images/media/drink/ywxwqs1461867097.jpg"
+							alt=""
+							srcset=""
+						/>
+						<h2 id="currentDrinkName"></h2>
+					</li>
+					<li class="carousel__slide">
+						<img
+							class="carousel__image"
+							src="https://www.thecocktaildb.com/images/media/drink/qyyvtu1468878544.jpg"
+							alt=""
+							srcset=""
+						/>
+						<h2 id="nextDrinkName"></h2>
+					</li> -->
+				</ul>
+			</div>
+			<button class="carousel__button carousel__button--right">
+				<img src="img/right-Circle.svg" alt="" srcset="" />
+			</button>
+
+			<div class="carousel__nav">
+				<button class="carousel__index current-slide"></button>
+				<button class="carousel__index"></button>
+				<button class="carousel__index"></button>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/carousel.js"></script>
+	</body>
+</html>

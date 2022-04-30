@@ -8,7 +8,11 @@ document
 	.addEventListener("click", getDrink);
 document
 	.querySelector("#cocktailIngredientButton")
-	.addEventListener("click", getSearchByIngredient);
+	.addEventListener("click", () => {
+		// getSearchByIngredient();
+		// addDrinks(arrayDrinkByIngredient);
+		loadDrinks();
+	});
 
 let drinkResults = "";
 
@@ -45,6 +49,18 @@ function getSearchByIngredient() {
 		});
 }
 
+async function loadDrinks() {
+	let ingredient = document.querySelector("#ingredientSearch").value;
+	const response = await fetch(
+		`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
+	);
+	const drinks = await response.json();
+	console.log(drinks);
+	addDrinks(drinks);
+	console.log(drinks);
+	return drinks;
+}
+
 function addDrinks(arrayOfDrinks) {
 	let list = document.querySelector("ul");
 
@@ -55,11 +71,11 @@ function addDrinks(arrayOfDrinks) {
 		// add class of carousel__slide to each list item
 		item.classList.add("carousel__slide");
 		// add img inside the list item
-		imgDrink.src = arrayDrinkByIngredient[i].strDrinkThumb;
+		imgDrink.src = arrayOfDrinks[i].strDrinkThumb;
 		imgDrink.classList.add("carousel__image");
 		item.appendChild(imgDrink);
 		// add drink name inside the list item
-
+		let drkName = document.createElement("h2");
 		// set its contents
 		item.appendChild(document.createTextNode(arrayOfDrinks[i].strDrink));
 

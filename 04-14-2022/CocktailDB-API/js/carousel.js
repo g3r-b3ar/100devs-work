@@ -9,9 +9,9 @@ const slideWidth = slides[0].getBoundingClientRect().width;
 // console.log(slideWidth)
 
 // arange the slides next to one another
-const setSlidePosition = (slide, index) => {
+function setSlidePosition(slide, index) {
 	slide.style.left = slideWidth * index + "px";
-};
+}
 slides.forEach(setSlidePosition);
 
 // function that moves slides left or right
